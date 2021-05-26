@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>You have been logged out</h2>
+<div class="border-top pt-3">
+    <form class="form-inline my-2 my-lg-0">
+        <a href="{% url 'userprofiles:home' %}" class="btn btn-outline-secondary">Home</a>
+        <a href="{% url 'login' %}" class="btn btn-primary ml-2"><i class="fa fa-sign-in" style="font-size:20px"></i> Log in again</a>
+    </form>
+
+</div>
+{% endblock content %}
