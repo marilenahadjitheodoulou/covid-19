@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="card o-hidden border-0 shadow-lg my-5">
+  <div class="card-body p-0">
+    <!-- Nested Row within Card Body -->
+    <div class="row">
+      <div class="col-lg-2 d-none d-lg-block"></div>
+      <div class="col-lg-8">
+        <div class="p-5">
+          <div class="text-center">
+            <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+          </div>
+          <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+              <table>
+                {{ form.as_p }}
+                {{ profile_form.as_p }}
+              </table>
+            </fieldset>
+            <div class="form-group">
+              <button class="btn btn-outline-info" type="submit"><i class="fa fa-user-plus" style="font-size:20px"></i> Sign Up</button>
+            </div>
+          </form>
+          <hr>
+          <div class="text-center">
+            <a class="small" href="{% url 'login' %}">Already have an account? Login!</a>
+          </div>
+          <div class="text-center">
+            <a class="small" href="{% url 'userprofiles:home' %}">Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+{% endblock content %}

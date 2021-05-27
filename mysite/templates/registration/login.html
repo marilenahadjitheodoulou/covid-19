@@ -13,7 +13,7 @@
             <div class="col-xl-10 col-lg-12 col-md-9">
                 <div class="text-center">
                     <h2 class="page-header">Sign In</h2>
-                    <h4 style="margin-bottom: 30px; margin-top: 20px">You may register through your social media accounts or your email.</h4>
+                    <h4 style="margin-bottom: 30px; margin-top: 20px">You may register through your email.</h4>
                 </div>
                 <div class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0">
@@ -33,7 +33,7 @@
                                     <div>
                                         <p>Forgot your password?<a
                                                 href="{% url 'password_reset' %}">Reset it</a>.</p>
-
+                                                <p>Not a member?<a href="{% url 'userprofiles:register' %}">Register</a>.
                                     </div>
                                 </div>
                             </div>
