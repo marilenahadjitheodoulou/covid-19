@@ -9,6 +9,7 @@ from templates import registration
 urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('', include('userprofiles.urls')),
+    path('', include('contacts.urls')),
     path('admin/', admin.site.urls),  
     path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),

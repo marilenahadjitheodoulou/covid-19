@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="content-section">
+  <form method="POST" id="productForm" >
+    {% csrf_token %}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Create a Contact</legend>
+      <table>
+        {{ form.as_table }}
+      </table>
+    </fieldset>
+    <div class="form-group">
+      <button class="btn btn-outline-info" type="submit"><i class="fa fa-plus" style="font-size:20px"></i> Upload</button>
+    </div>
+  </form>
+</div>
