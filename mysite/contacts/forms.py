@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.models import Users
+from django.contrib.auth.models import User
 from .models import Contact
 
 class ContactForm(forms.ModelForm):
