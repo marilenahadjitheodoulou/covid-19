@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="card card-body">
+        <h5>My Contacts</h5>
+        <hr>
+        <h1 style="text-align: center;padding: 10px">{{total_mycontact}}</h1>
+    </div>
+    <!-- Main Content Here -->
+    <table id="example" class="table table-bordered" style="width:100%">
+        <thead class="thead-light">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Number</th>
+                <th>Date</th>
+                <th>Details</th>
+                <th>Remove</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for contact in contacts %}
+            <tr>
+                <td>{{contact.name}}</td>
+                <td>{{contact.email}}</td>
+                <td>{{contact.number}}</td>
+                <td>{{contact.date}}</td>
+                <td>{{contact.details}}</td>
+                <td><a class="btn-sm btn-danger" href="{% url 'userprofiles:profile' %}">Delete</a></td>   
+                <br>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}

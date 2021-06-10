@@ -53,7 +53,8 @@
               <a class="dropdown-item" href="{% url 'userprofiles:profile' %}"><i class="fa fa-user-circle" style="font-size:20px"></i> Profile</a>
               <a class="dropdown-item" href="{% url 'userprofiles:edit_profile' %}"><i class="fa fa-vcard" style="font-size:20px"></i> Edit Profile</a>
               <a class="dropdown-item" href="{% url 'password_change' %}"><i class="fa fa-lock" style="font-size:20px"></i> Change password</a>
-              <a class="dropdown-item" href="{% url 'contacts:upload' %}"><i class="fa fa-upload" style="font-size:20px"></i> Create a Contact</a>
+              <a class="dropdown-item" href="{% url 'contacts:upload' %}"><i class="fa fa-user-plus" style="font-size:20px"></i> Create a Contact</a>
+              <a class="dropdown-item" href="{% url 'contacts:mycontacts' %}"><i class="fa fa-users" style="font-size:20px"></i> My Contacts</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="{% url 'logout' %}"><i class="fa fa-sign-out" style="font-size:20px"></i> Log out</a>
             </div>
