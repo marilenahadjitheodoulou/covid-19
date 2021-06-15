@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'mysite',
     'contacts',
     'userprofiles',
+    'django_filters',
     'crispy_forms',
 ]
 
