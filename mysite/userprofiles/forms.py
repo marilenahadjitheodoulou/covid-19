@@ -38,13 +38,13 @@ class EditProfileForm(ModelForm):
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ('location', 'number', 'amka')
+        fields = ('location', 'phonenumber', 'amka')
 
     def save(self, commit=True):
         user = super().save(commit=False)
 
         user.location = self.cleaned_data['location']
-        user.number = self.cleaned_data['number']
+        user.number = self.cleaned_data['phonenumber']
         user.amka = self.cleaned_data['amka']
 
         if commit:
@@ -56,5 +56,5 @@ class EditProForm(ModelForm):
         model = UserProfile
         fields = [
             'location', 
-            'number', 
+            'phonenumber', 
         ]

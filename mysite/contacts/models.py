@@ -7,9 +7,9 @@ class Contact(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
     email = models.EmailField(max_length=50, help_text='Enter a valid email address')
-    number = models.IntegerField(default=None)
-    date = models.IntegerField(default=None)
+    phonenumber = models.IntegerField(default=None)
+    date = models.IntegerField(default=None, help_text='Enter a valid date MMDD')
     details = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.user
+        return self.name

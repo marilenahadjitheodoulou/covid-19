@@ -3,7 +3,11 @@
 {% block content %}
 <h2>Homepage</h2>
 <p>Welcome to Covid-19 Contact Tracing, {% if user.is_authenticated %}{{ user.username }}{% else %}visitor{% endif %}!</p>
-<strong>Total users registered: </strong> <i class="fa fa-users" style="font-size:20px"></i> {{ count }}
+<strong>Total users registered: </strong> <i class="fa fa-users" style="font-size:20px"></i> {{ count }} 
 <br>
+{{allcenters}}
+<strong>
+  <a href="{% url 'userprofiles:allcenters' %}">Check all Covid-19 Diagnostic Center</a>.</p>
+</strong>
 
 {% endblock %}

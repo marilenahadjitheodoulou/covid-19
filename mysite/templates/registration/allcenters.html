@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h5>List of Covid-19 Diagnostic Centers</h5>
+    <br>
+    <!-- Main Content Here -->
+    <table id="example" class="table table-bordered" style="width:100%">
+        <thead class="thead-light">
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        {% for allcenter in allcenters %}
+        <tr>
+          <tbody>
+            <td>{{allcenter.name}}</td>
+            <td>{{allcenter.address}}</td>
+          </tbody>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<div class="text-center">
+    <a class="small" href="{% url 'userprofiles:home' %}">Back</a>
+</div>
+
+{% endblock content %}

@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.views.generic import TemplateView, ListView
-from userprofiles.models import UserProfile
+from userprofiles.models import *
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
@@ -58,7 +58,7 @@ class ProfileView(LoginRequiredMixin, TemplateView):
 
 class ProfileCreateView(CreateView):
     model = UserProfile
-    fields = ['location', 'number', 'amka']
+    fields = ['location', 'phonenumber', 'amka']
     template_name = 'registration/edit_profile.html'
 
     def form_valid(self, form):
@@ -93,3 +93,9 @@ class ProfileUpdateView(LoginRequiredMixin, TemplateView):
 
     def get(self, request, *args, **kwargs):
         return self.post(request, *args, **kwargs)
+
+def getcenters(request):
+    allcenters = CenterDetails.objects.all()
+        
+    context = {'allcenters':allcenters}
+    return render(request, 'registration/allcenters.html', context)

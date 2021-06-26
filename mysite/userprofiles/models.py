@@ -17,7 +17,7 @@ class UserProfile(models.Model):
         )
     location = models.CharField(default=None,
         max_length=50, blank=False)
-    number = models.IntegerField(default=None)
+    phonenumber = models.IntegerField(default=None)
     amka = models.IntegerField(default=None)
 
     def __str__(self):
@@ -26,3 +26,9 @@ class UserProfile(models.Model):
     def get_absolute_url(self):
         return reverse('userprofiles:profile')#, kwargs={'slug':self.slug})
 
+class CenterDetails(models.Model):
+    name = models.CharField(default=None, max_length=50, blank=False)
+    address = models.CharField(default=None, max_length=50, blank=False)
+
+    def __str__(self):
+        return self.name

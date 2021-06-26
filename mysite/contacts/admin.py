@@ -3,7 +3,7 @@ from .models import Contact
 
 class ContactAdmin(admin.ModelAdmin):
     
-    list_display = ('user', 'name', 'email', 'number', 'date', 'details')
+    list_display = ('user', 'name', 'email', 'phonenumber', 'date', 'details')
     class Meta:
         model = Contact
 

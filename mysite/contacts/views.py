@@ -31,5 +31,18 @@ class UploadView(TemplateView):
     def get(self, request):
         contacts = Contact.objects.filter(user=request.user)
         total_mycontact = contacts.count()
-        context = {'contacts': contacts, 'total_mycontact':total_mycontact}
+        
+        myFilter = OrderFilter(request.GET, queryset=contacts)
+        contacts = myFilter.qs
+
+        context = {'contacts': contacts, 'total_mycontact':total_mycontact, 'myFilter': myFilter}
         return render(request, self.template_name, context)
+
+def delete(request, pk):
+    deletep = Contact.objects.get(id=pk)
+    if request.method == "POST":
+        deletep.delete()
+        return redirect('contacts:mycontacts')
+    
+    context = {'item': deletep}
+    return render(request, 'registration/delete.html', context)
