@@ -22,6 +22,15 @@ services:
       - "8000:8000"
     depends_on:
       - db
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx/nginx.http.config:/etc/nginx/nginx.conf
+      - ./nginx/certs:/etc/nginx/certs
+    ports:
+      - "80:80"
+    depends_on:
+      - web
 
 volumes:
   postgres_data:
