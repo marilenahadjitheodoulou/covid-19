@@ -3,6 +3,8 @@ version: '3'
 services:
   db:
     image: postgres:12.0-alpine
+    ports:
+      - "5432:5432"
     environment:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=123pass
@@ -31,7 +33,6 @@ services:
       - "80:80"
     depends_on:
       - web
-
 volumes:
   postgres_data:
       
